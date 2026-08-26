@@ -59,7 +59,7 @@ export default function Hero() {
             }}
             className="text-[clamp(4rem,11vw,10rem)] font-semibold leading-[0.82] tracking-[-0.07em]"
           >
-            I BUILD
+            I BUILD things
           </motion.h1>
         </div>
 
