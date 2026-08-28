@@ -7,11 +7,45 @@ import { motion } from "motion/react";
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
+  const handleSubmit = async (
+  event: FormEvent<HTMLFormElement>
+) => {
+  event.preventDefault();
 
-    setSubmitted(true);
+  const form = event.currentTarget;
+
+  const formData = new FormData(form);
+
+  const data = {
+    name: formData.get("name"),
+    email: formData.get("email"),
+    projectType: formData.get("projectType"),
+    description: formData.get("description"),
   };
+
+  try {
+    const response = await fetch("/api/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+
+    const result = await response.json();
+
+    if (result.success) {
+      setSubmitted(true);
+      form.reset();
+    } else {
+      alert(result.message);
+    }
+  } catch (error) {
+    console.error(error);
+
+    alert("Unable to send your project enquiry.");
+  }
+};
 
   return (
     <section
