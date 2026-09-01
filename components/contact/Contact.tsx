@@ -8,44 +8,44 @@ export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = async (
-  event: FormEvent<HTMLFormElement>
-) => {
-  event.preventDefault();
+    event: FormEvent<HTMLFormElement>
+  ) => {
+    event.preventDefault();
 
-  const form = event.currentTarget;
+    const form = event.currentTarget;
 
-  const formData = new FormData(form);
+    const formData = new FormData(form);
 
-  const data = {
-    name: formData.get("name"),
-    email: formData.get("email"),
-    projectType: formData.get("projectType"),
-    description: formData.get("description"),
-  };
+    const data = {
+      name: formData.get("name"),
+      email: formData.get("email"),
+      projectType: formData.get("projectType"),
+      description: formData.get("description"),
+    };
 
-  try {
-    const response = await fetch("/api/contact", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    });
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
 
-    const result = await response.json();
+      const result = await response.json();
 
-    if (result.success) {
-      setSubmitted(true);
-      form.reset();
-    } else {
-      alert(result.message);
+      if (result.success) {
+        setSubmitted(true);
+        form.reset();
+      } else {
+        alert(result.message);
+      }
+    } catch (error) {
+      console.error(error);
+
+      alert("Unable to send your project enquiry.");
     }
-  } catch (error) {
-    console.error(error);
-
-    alert("Unable to send your project enquiry.");
-  }
-};
+  };
 
   return (
     <section
@@ -75,7 +75,7 @@ export default function Contact() {
             <br />
             <span className="text-white/30">IDEA?</span>
             <br />
-            LET'S BUILD IT.
+            LET&apos;S BUILD IT.
           </h2>
         </motion.div>
 
@@ -89,6 +89,8 @@ export default function Contact() {
           transition={{ duration: 0.8, delay: 0.15 }}
           className="mt-24 max-w-4xl"
         >
+          {/* Name + Email */}
+
           <div className="grid gap-10 md:grid-cols-2">
 
             {/* Name */}
@@ -122,7 +124,6 @@ export default function Contact() {
                 className="w-full border-b border-white/15 bg-transparent px-0 py-4 text-lg outline-none transition-colors placeholder:text-white/20 focus:border-purple-400"
               />
             </div>
-
           </div>
 
           {/* Project type */}
@@ -133,7 +134,6 @@ export default function Contact() {
             </label>
 
             <div className="flex flex-wrap gap-3">
-
               {[
                 "Website",
                 "Web Application",
@@ -141,7 +141,10 @@ export default function Contact() {
                 "Data / ML",
                 "Something else",
               ].map((option) => (
-                <label key={option} className="cursor-pointer">
+                <label
+                  key={option}
+                  className="cursor-pointer"
+                >
                   <input
                     type="radio"
                     name="projectType"
@@ -149,12 +152,11 @@ export default function Contact() {
                     className="peer sr-only"
                   />
 
-                  <span className="block rounded-full border border-white/10 px-5 py-3 text-sm text-white/40 transition-all duration-300 peer-checked:border-purple-400 peer-checked:bg-purple-400 peer-checked:text-black hover:border-white/30">
+                  <span className="block rounded-full border border-white/10 px-5 py-3 text-sm text-white/40 transition-all duration-300 hover:border-white/30 peer-checked:border-purple-400 peer-checked:bg-purple-400 peer-checked:text-black">
                     {option}
                   </span>
                 </label>
               ))}
-
             </div>
           </div>
 
@@ -180,7 +182,7 @@ export default function Contact() {
             type="submit"
             className="group mt-12 flex items-center gap-4 rounded-full bg-white px-7 py-4 text-sm font-medium text-black transition-all duration-300 hover:scale-105"
           >
-            {submitted ? "Message Ready" : "Send Project Brief"}
+            {submitted ? "Message Sent" : "Send Project Brief"}
 
             {submitted ? (
               <Check size={18} />
@@ -194,11 +196,71 @@ export default function Contact() {
 
           {submitted && (
             <p className="mt-5 text-sm text-purple-400">
-              The form is working. We'll connect it to a real submission
-              service next.
+              Thanks for reaching out. I&apos;ll get back to you soon.
             </p>
           )}
         </motion.form>
+
+        {/* Direct contact */}
+
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="mt-32 border-t border-white/10 pt-10"
+        >
+          <div className="grid gap-10 md:grid-cols-3">
+
+            {/* Email */}
+
+            <div>
+              <p className="mb-3 text-xs uppercase tracking-[0.25em] text-white/25">
+                Email
+              </p>
+
+              <a
+                href="mailto:collinskmurithi@gmail.com"
+                className="text-sm text-white/60 transition-colors hover:text-white"
+              >
+                collinskmurithi@gmail.com
+              </a>
+            </div>
+
+            {/* Phone */}
+
+            <div>
+              <p className="mb-3 text-xs uppercase tracking-[0.25em] text-white/25">
+                Phone
+              </p>
+
+              <a
+                href="tel:+254769655170"
+                className="text-sm text-white/60 transition-colors hover:text-white"
+              >
+                +254 769 655 170
+              </a>
+            </div>
+
+            {/* LinkedIn */}
+
+            <div>
+              <p className="mb-3 text-xs uppercase tracking-[0.25em] text-white/25">
+                LinkedIn
+              </p>
+
+              <a
+                href="https://www.linkedin.com/in/collins-kinoti-977453243/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-white/60 transition-colors hover:text-white"
+              >
+                Connect on LinkedIn ↗
+              </a>
+            </div>
+          </div>
+        </motion.div>
+
       </div>
     </section>
   );
