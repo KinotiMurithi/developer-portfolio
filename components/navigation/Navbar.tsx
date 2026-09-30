@@ -21,7 +21,7 @@ export default function Navbar() {
           href="/"
           className="relative z-50 text-lg font-semibold tracking-tight"
         >
-          KINOTI DIGITAL PRODUCTS<span className="text-purple-400">.</span>
+          RATZON DIGITAL PRODUCTS<span className="text-purple-400">.</span>
         </a>
 
         {/* Desktop navigation */}

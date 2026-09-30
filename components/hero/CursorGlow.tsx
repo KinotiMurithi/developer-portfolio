@@ -32,14 +32,6 @@ export default function CursorGlow() {
           top: position.y,
         }}
       />
-
-      <div
-        className="pointer-events-none fixed z-[5] hidden h-3 w-3 -translate-x-1/2 -translate-y-1/2 rounded-full bg-purple-300 md:block"
-        style={{
-          left: position.x,
-          top: position.y,
-        }}
-      />
     </>
   );
 }
