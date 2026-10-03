@@ -1,26 +1,21 @@
+import type { Metadata } from "next";
+
 import Hero from "@/components/hero/Hero";
-import CursorGlow from "@/components/hero/CursorGlow";
 import Navbar from "@/components/navigation/Navbar";
-import Services from "@/components/services/Services";
-import Projects from "@/components/projects/Projects";
-import About from "@/components/about/About";
-import Contact from "@/components/contact/Contact";
+import CursorGlow from "@/components/hero/CursorGlow";
+
+export const metadata: Metadata = {
+  title: "Digital Products & Growth Solutions",
+  description:
+    "Ratzon Digital Products builds websites, web applications, digital systems, and growth solutions for businesses.",
+};
 
 export default function Home() {
   return (
-    <main>
+    <main className="min-h-screen bg-[var(--background)] text-[var(--foreground)]">
       <CursorGlow />
-
       <Navbar />
-
       <Hero />
-
-      <Services />
-
-      <Projects />
-
-      <About />
-      <Contact />
     </main>
   );
 }

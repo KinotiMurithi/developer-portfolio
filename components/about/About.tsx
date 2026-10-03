@@ -1,179 +1,145 @@
 "use client";
 
+import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 import { motion } from "motion/react";
-import {
-  ArrowDownToLine,
-  Braces,
-  BrainCircuit,
-  Database,
-  Layers3,
-  Server,
-} from "lucide-react";
 
-const skills = [
+const principles = [
   {
-    name: "JavaScript",
-    icon: Braces,
+    title: "Build useful things",
+    text: "Technology should solve a real problem rather than exist simply because it can be built.",
   },
   {
-    name: "TypeScript",
-    icon: Braces,
+    title: "Think commercially",
+    text: "A good digital product should support the business behind it, whether that means acquiring customers, improving operations, or making better decisions.",
   },
   {
-    name: "React",
-    icon: Layers3,
-  },
-  {
-    name: "Next.js",
-    icon: Layers3,
-  },
-  {
-    name: "Python",
-    icon: Server,
-  },
-  {
-    name: "Django",
-    icon: Database,
-  },
-  {
-    name: "Machine Learning",
-    icon: BrainCircuit,
+    title: "Keep learning",
+    text: "Technology changes quickly. We continuously experiment, learn, and improve how we build.",
   },
 ];
 
 export default function About() {
   return (
-    <section
-      id="about"
-      className="relative overflow-hidden bg-[#050505] px-6 py-32 text-white md:px-12 lg:px-20"
-    >
+    <section className="bg-[var(--background)] px-6 py-28 text-[var(--foreground)] md:px-12 lg:px-20">
       <div className="mx-auto max-w-7xl">
-
-        {/* Header */}
-
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.8 }}
-        >
-          <p className="mb-6 text-xs uppercase tracking-[0.3em] text-purple-400">
-            About me
-          </p>
-
-          <h2 className="max-w-5xl text-[clamp(3rem,7vw,7rem)] font-semibold leading-[0.9] tracking-[-0.06em]">
-            DEVELOPER.
-            <br />
-            <span className="text-white/30">PROBLEM SOLVER.</span>
-            <br />
-            BUILDER.
-          </h2>
-        </motion.div>
-
-        {/* About content */}
-
-        <div className="mt-24 grid gap-16 md:grid-cols-2">
-
-          {/* Story */}
-
-          <motion.div
-            initial={{ opacity: 0, x: -40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8 }}
-          >
-            <p className="text-xl leading-relaxed text-white/70 md:text-2xl">
-              I build digital products with modern web technologies and
-              Python. My focus is on creating software that is not only
-              visually compelling, but useful, responsive, and engineered
-              properly.
-            </p>
-
-            <p className="mt-8 max-w-xl leading-relaxed text-white/40">
-              I work across frontend development, full-stack applications,
-              backend systems, data, and machine learning. I'm continuously
-              expanding my capabilities and turning what I learn into things
-              I can actually build.
-            </p>
-
-            {/* CV button */}
-
-            <a
-              href="/Collins-Kinoti-Murithi-CV.pdf"
-              download
-              className="group mt-10 inline-flex items-center gap-3 rounded-full bg-white px-6 py-3.5 text-sm font-medium text-black transition-all duration-300 hover:scale-105"
-            >
-              Download CV
-
-              <ArrowDownToLine
-                size={17}
-                className="transition-transform duration-300 group-hover:translate-y-1"
-              />
-            </a>
-          </motion.div>
-
-          {/* Skills */}
-
-          <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8 }}
-          >
-            <p className="mb-6 text-xs uppercase tracking-[0.25em] text-white/25">
-              Technologies
-            </p>
-
-            <div className="grid grid-cols-2 border-l border-t border-white/10">
-              {skills.map((skill, index) => {
-                const Icon = skill.icon;
-
-                return (
-                  <motion.div
-                    key={skill.name}
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    viewport={{ once: true }}
-                    transition={{
-                      delay: index * 0.05,
-                    }}
-                    className="group flex items-center gap-4 border-b border-r border-white/10 p-6 transition-colors duration-300 hover:bg-white/[0.03]"
-                  >
-                    <Icon
-                      size={20}
-                      strokeWidth={1.5}
-                      className="text-white/30 transition-colors duration-300 group-hover:text-purple-400"
-                    />
-
-                    <span className="text-sm text-white/60 transition-colors duration-300 group-hover:text-white">
-                      {skill.name}
-                    </span>
-                  </motion.div>
-                );
-              })}
-            </div>
-          </motion.div>
-        </div>
-
-        {/* Bottom statement */}
 
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="mt-32 border-t border-white/10 pt-8"
+          transition={{ duration: 0.7 }}
         >
-          <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-            <span className="text-xs uppercase tracking-[0.25em] text-white/20">
-              Currently learning
-            </span>
+          <p className="mb-5 text-xs font-semibold uppercase tracking-[0.25em] text-[var(--accent)]">
+            About Ratzon
+          </p>
 
-            <span className="text-sm text-white/50">
-              Machine Learning · Data Analysis · Advanced Full-Stack Development
+          <h1 className="max-w-5xl text-[clamp(2.8rem,5.5vw,5.5rem)] font-semibold leading-[0.92] tracking-[-0.06em]">
+            TECHNOLOGY WITH{" "}
+            <span className="text-[var(--muted)]">
+              PURPOSE.
             </span>
+          </h1>
+        </motion.div>
+
+        <div className="mt-16 grid gap-14 lg:grid-cols-[1fr_1.2fr]">
+
+          <motion.div
+            initial={{ opacity: 0, y: 25 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+          >
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[var(--muted)]">
+              The company
+            </p>
+
+            <p className="mt-6 text-lg leading-8 text-[var(--foreground)]/75">
+              Ratzon Digital Products is a technology business focused
+              on building digital products and helping businesses
+              make better use of technology.
+            </p>
+
+            <p className="mt-5 text-base leading-7 text-[var(--muted)]">
+              Our work spans web development, digital systems,
+              search visibility, digital marketing, data, and
+              artificial intelligence.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 25 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.1 }}
+            className="border-t border-[var(--border)]"
+          >
+            {principles.map((principle, index) => (
+              <div
+                key={principle.title}
+                className="border-b border-[var(--border)] py-7"
+              >
+                <div className="flex gap-6">
+                  <span className="text-xs font-semibold text-[var(--accent)]">
+                    0{index + 1}
+                  </span>
+
+                  <div>
+                    <h2 className="text-xl font-semibold">
+                      {principle.title}
+                    </h2>
+
+                    <p className="mt-2 max-w-xl text-sm leading-6 text-[var(--muted)]">
+                      {principle.text}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </motion.div>
+        </div>
+
+        {/* Founder */}
+        <motion.div
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          className="mt-20 border-t border-[var(--border)] pt-10"
+        >
+          <div className="grid gap-8 md:grid-cols-[1fr_2fr_auto] md:items-center">
+
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--muted)]">
+                Founder
+              </p>
+
+              <h2 className="mt-3 text-2xl font-semibold">
+                Collins Kinoti
+              </h2>
+            </div>
+
+            <p className="max-w-2xl text-sm leading-7 text-[var(--muted)]">
+              Founder and developer building Ratzon Digital Products
+              around software, digital products, data, and business
+              growth.
+            </p>
+
+            <Link
+              href="/contact"
+              className="group flex w-fit items-center gap-3 rounded-full border border-[var(--foreground)]/15 bg-[var(--surface)] px-6 py-3.5 text-sm font-medium shadow-sm transition-all duration-300 hover:border-[var(--accent)] hover:bg-[var(--accent)] hover:text-white"
+            >
+              Work with us
+
+              <ArrowUpRight
+                size={17}
+                className="transition-transform duration-300 group-hover:rotate-45"
+              />
+            </Link>
+
           </div>
         </motion.div>
+
       </div>
     </section>
   );

@@ -1,137 +1,205 @@
 "use client";
 
+import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 import { motion } from "motion/react";
-import {
-  ArrowUpRight,
-  Code2,
-  Database,
-  BrainCircuit,
-} from "lucide-react";
 
 const services = [
   {
     number: "01",
-    title: "Web Development",
+    title: "Website Development",
     description:
-      "Professional, responsive websites built to give businesses and individuals a strong digital presence.",
-    icon: Code2,
-    technologies: "React · Next.js · TypeScript",
+      "Professional, responsive websites built around your brand, customers, business goals, and online presence.",
+    tags: ["Business Websites", "Responsive", "SEO"],
   },
   {
     number: "02",
     title: "Web Applications",
     description:
-      "Custom web applications designed around your workflow, users, data, and business requirements.",
-    icon: Database,
-    technologies: "Next.js · React · Django · Python",
+      "Interactive web applications designed to solve specific business problems and deliver useful digital experiences.",
+    tags: ["Next.js", "React", "Web Apps"],
   },
   {
     number: "03",
-    title: "Data & Machine Learning",
+    title: "Custom Software",
     description:
-      "Data-driven solutions, analysis, and machine-learning models that turn data into useful insights.",
-    icon: BrainCircuit,
-    technologies: "Python · Machine Learning · Data",
+      "Tailored software systems built around the unique workflows, processes, and requirements of your business.",
+    tags: ["Custom Systems", "Automation", "Business Software"],
+  },
+  {
+    number: "04",
+    title: "UI/UX Design",
+    description:
+      "Clear, modern, user-focused interfaces designed to make digital products easier and more enjoyable to use.",
+    tags: ["UI Design", "UX Design", "Prototyping"],
+  },
+  {
+    number: "05",
+    title: "Backend & API Development",
+    description:
+      "Reliable backend systems and APIs that power applications, connect services, manage data, and support scalable products.",
+    tags: ["Django", "REST APIs", "Databases"],
+  },
+  {
+    number: "06",
+    title: "Dashboards / Admin Systems",
+    description:
+      "Internal dashboards and administration systems that help businesses manage operations, users, data, and workflows.",
+    tags: ["Dashboards", "Admin Panels", "Business Intelligence"],
+  },
+  {
+    number: "07",
+    title: "Website Redesign & Maintenance",
+    description:
+      "Improve an existing website with modern design, better performance, updated content, technical fixes, and ongoing maintenance.",
+    tags: ["Redesign", "Performance", "Maintenance"],
+  },
+  {
+    number: "08",
+    title: "Google Business Profile Setup / Optimization",
+    description:
+      "Set up and optimize your Google Business Profile to strengthen your local online presence and help customers discover your business.",
+    tags: ["Local SEO", "Google Business", "Optimization"],
+  },
+  {
+    number: "09",
+    title: "Data & Analytics",
+    description:
+      "Transform business data into useful dashboards, reports, insights, and analytical systems that support better decisions.",
+    tags: ["Analytics", "Dashboards", "Data"],
+  },
+  {
+    number: "10",
+    title: "AI & Machine Learning",
+    description:
+      "Intelligent applications, predictive systems, and machine learning solutions designed around practical business use cases.",
+    tags: ["Python", "Machine Learning", "AI"],
   },
 ];
 
 export default function Services() {
   return (
-    <section
-      id="services"
-      className="relative overflow-hidden bg-[#050505] px-6 py-32 text-white md:px-12 lg:px-20"
-    >
+    <section className="relative overflow-hidden bg-[var(--background)] px-6 py-28 text-[var(--foreground)] transition-colors duration-300 md:px-12 lg:px-20">
       <div className="mx-auto max-w-7xl">
-        {/* Section heading */}
 
+        {/* HEADER */}
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
           className="mb-20"
         >
-          <p className="mb-6 text-xs uppercase tracking-[0.3em] text-purple-400">
-            What I do
+          <p className="mb-5 text-xs font-semibold uppercase tracking-[0.25em] text-[var(--accent)]">
+            What we do
           </p>
 
-          <h2 className="max-w-4xl text-[clamp(3rem,7vw,7rem)] font-semibold leading-[0.9] tracking-[-0.06em]">
-            TURNING
-            <br />
-            <span className="text-white/30">IDEAS INTO</span>
-            <br />
-            DIGITAL PRODUCTS.
-          </h2>
+          <h1 className="max-w-4xl text-[clamp(2.8rem,5.5vw,5.5rem)] font-semibold leading-[0.92] tracking-[-0.06em]">
+            DIGITAL{" "}
+            <span className="text-[var(--muted)]">
+              SOLUTIONS.
+            </span>
+          </h1>
+
+          <p className="mt-8 max-w-2xl text-base leading-7 text-[var(--muted)] md:text-lg">
+            From websites and custom software to analytics, business
+            systems, and artificial intelligence, we build practical
+            digital solutions around real business needs.
+          </p>
         </motion.div>
 
-        {/* Service cards */}
+        {/* SERVICES */}
+        <div className="border-t border-[var(--border)]">
+          {services.map((service, index) => (
+            <motion.article
+              key={service.number}
+              initial={{ opacity: 0, y: 25 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{
+                duration: 0.6,
+                delay: index * 0.04,
+              }}
+              className="group border-b border-[var(--border)] py-9 transition-colors duration-300 hover:bg-[var(--surface-muted)]/50 md:py-12"
+            >
+              <div className="grid gap-7 md:grid-cols-[80px_1fr_1fr_auto] md:items-start">
 
-        <div className="border-t border-white/10">
-          {services.map((service, index) => {
-            const Icon = service.icon;
+                {/* NUMBER */}
+                <span className="text-sm font-medium text-[var(--accent)]">
+                  {service.number}
+                </span>
 
-            return (
-              <motion.div
-                key={service.number}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-80px" }}
-                transition={{
-                  duration: 0.7,
-                  delay: index * 0.1,
-                }}
-                className="group relative border-b border-white/10"
-              >
-                <div className="relative flex flex-col gap-8 py-10 md:flex-row md:items-center md:justify-between md:py-14">
-                  {/* Number */}
+                {/* TITLE */}
+                <div>
+                  <h2 className="text-2xl font-semibold tracking-[-0.03em] md:text-3xl">
+                    {service.title}
+                  </h2>
+                </div>
 
-                  <div className="flex items-start gap-8 md:w-[30%]">
-                    <span className="font-mono text-sm text-white/25">
-                      {service.number}
-                    </span>
+                {/* DESCRIPTION */}
+                <div>
+                  <p className="max-w-lg text-sm leading-7 text-[var(--muted)] md:text-base">
+                    {service.description}
+                  </p>
 
-                    <Icon
-                      size={28}
-                      strokeWidth={1.3}
-                      className="text-white/40 transition-all duration-500 group-hover:rotate-12 group-hover:text-purple-400"
-                    />
-                  </div>
-
-                  {/* Main content */}
-
-                  <div className="md:w-[45%]">
-                    <h3 className="text-3xl font-medium tracking-tight transition-transform duration-500 group-hover:translate-x-2 md:text-4xl">
-                      {service.title}
-                    </h3>
-
-                    <p className="mt-4 max-w-lg leading-relaxed text-white/40">
-                      {service.description}
-                    </p>
-
-                    <p className="mt-5 text-xs uppercase tracking-[0.18em] text-white/20">
-                      {service.technologies}
-                    </p>
-                  </div>
-
-                  {/* Arrow */}
-
-                  <div className="flex justify-end md:w-[15%]">
-                    <div className="flex h-14 w-14 items-center justify-center rounded-full border border-white/10 transition-all duration-500 group-hover:border-purple-400/50 group-hover:bg-purple-400 group-hover:text-black">
-                      <ArrowUpRight
-                        size={22}
-                        className="transition-transform duration-500 group-hover:rotate-45"
-                      />
-                    </div>
+                  <div className="mt-5 flex flex-wrap gap-2">
+                    {service.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="rounded-full border border-[var(--border)] px-3 py-1.5 text-xs text-[var(--muted)] transition-colors duration-300 group-hover:border-[var(--accent)]/30"
+                      >
+                        {tag}
+                      </span>
+                    ))}
                   </div>
                 </div>
 
-                {/* Hover background */}
+                {/* ACTION */}
+                <div className="flex items-center">
+                  <Link
+                    href="/contact"
+                    aria-label={`Discuss ${service.title}`}
+                    className="group/action flex h-11 w-11 items-center justify-center rounded-full border border-[var(--foreground)]/20 bg-[var(--surface)] text-[var(--foreground)] shadow-sm transition-all duration-300 hover:border-[var(--accent)] hover:bg-[var(--accent)] hover:text-white hover:shadow-md"
+                  >
+                    <ArrowUpRight
+                      size={18}
+                      className="transition-transform duration-300 group-hover/action:rotate-45"
+                    />
+                  </Link>
+                </div>
 
-                <div className="pointer-events-none absolute inset-0 -z-0 origin-left scale-x-0 bg-white/[0.02] transition-transform duration-700 ease-out group-hover:scale-x-100" />
-              </motion.div>
-            );
-          })}
+              </div>
+            </motion.article>
+          ))}
         </div>
+
+        {/* CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          className="mt-14 flex flex-col gap-5 border-t border-[var(--border)] pt-8 md:flex-row md:items-center md:justify-between"
+        >
+          <p className="max-w-xl text-sm leading-6 text-[var(--muted)]">
+            Not sure which service your business needs? Tell us about
+            the problem you're trying to solve and we'll help identify
+            the right digital solution.
+          </p>
+
+          <Link
+            href="/contact"
+            className="group flex w-fit items-center gap-3 rounded-full border border-[var(--foreground)]/20 bg-[var(--surface)] px-6 py-3.5 text-sm font-medium text-[var(--foreground)] shadow-sm transition-all duration-300 hover:border-[var(--accent)] hover:bg-[var(--accent)] hover:text-white"
+          >
+            Discuss your project
+
+            <ArrowUpRight
+              size={17}
+              className="transition-transform duration-300 group-hover:rotate-45"
+            />
+          </Link>
+        </motion.div>
+
       </div>
     </section>
   );

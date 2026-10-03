@@ -24,14 +24,13 @@ export default function CursorGlow() {
   }, []);
 
   return (
-    <>
-      <div
-        className="pointer-events-none fixed z-[5] hidden h-[450px] w-[450px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-purple-500/15 blur-[100px] md:block"
-        style={{
-          left: position.x,
-          top: position.y,
-        }}
-      />
-    </>
+    <div
+      aria-hidden="true"
+      className="pointer-events-none fixed z-[5] hidden h-[420px] w-[420px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-purple-500/10 blur-[110px] md:block"
+      style={{
+        left: position.x,
+        top: position.y,
+      }}
+    />
   );
 }

@@ -1,146 +1,157 @@
 "use client";
 
+import Link from "next/link";
+import { ArrowDown, ArrowUpRight } from "lucide-react";
 import { motion } from "motion/react";
-import FloatingDonut from "./FloatingDonut";
+
+const capabilities = [
+  "Website Development",
+  "Web Applications",
+  "Custom Software",
+  "UI/UX Design",
+  "Backend & APIs",
+  "Dashboards",
+  "Google Business",
+  "Data & Analytics",
+  "AI & Machine Learning",
+];
 
 export default function Hero() {
   return (
-    <section className="relative flex min-h-screen items-center overflow-hidden text-white">
-        <FloatingDonut /> 
-      {/* Ambient lights */}
-      <div className="pointer-events-none absolute inset-0">
-        <div className="absolute left-1/2 top-1/3 h-[600px] w-[600px] -translate-x-1/2 rounded-full bg-purple-500/10 blur-[140px]" />
+    <section
+      aria-labelledby="hero-heading"
+      className="relative flex min-h-screen overflow-hidden bg-[var(--background)] text-[var(--foreground)] transition-colors duration-300"
+    >
 
-        <div className="absolute -right-40 -top-40 h-[500px] w-[500px] rounded-full bg-blue-500/10 blur-[140px]" />
+      {/* PURPLE GLOW */}
+      <div className="pointer-events-none absolute left-[62%] top-[35%] h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[var(--accent)]/10 blur-[150px]" />
 
-        <div className="absolute -bottom-40 -left-40 h-[500px] w-[500px] rounded-full bg-indigo-500/10 blur-[140px]" />
-      </div>
+      {/* DECORATIVE CIRCLE */}
+      <div className="pointer-events-none absolute -right-[180px] top-[8%] h-[650px] w-[650px] rounded-full border border-[var(--accent)]/[0.08]" />
 
-      {/* Grid */}
-      <div className="pointer-events-none absolute inset-0 opacity-[0.08]">
-        <div
-          className="h-full w-full"
-          style={{
-            backgroundImage: `
-              linear-gradient(rgba(255,255,255,0.2) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(255,255,255,0.2) 1px, transparent 1px)
-            `,
-            backgroundSize: "80px 80px",
-          }}
-        />
-      </div>
+      <div className="pointer-events-none absolute -right-[60px] top-[20%] h-[430px] w-[430px] rounded-full border border-[var(--foreground)]/[0.04]" />
 
-      <div className="relative z-10 mx-auto w-full max-w-7xl px-6 py-32 md:px-12 lg:px-20">
-        {/* Availability */}
+      {/* GRID */}
+      <div
+        className="pointer-events-none absolute inset-0 opacity-[0.025]"
+        style={{
+          backgroundImage: `
+            linear-gradient(to right, var(--foreground) 1px, transparent 1px),
+            linear-gradient(to bottom, var(--foreground) 1px, transparent 1px)
+          `,
+          backgroundSize: "80px 80px",
+        }}
+      />
+
+      {/* FADE */}
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,var(--background)_78%)]" />
+
+      {/* CONTENT */}
+      <div className="relative z-10 mx-auto flex w-full max-w-7xl flex-col justify-center px-6 pb-20 pt-32 md:px-12 lg:px-20">
+
+        {/* LABEL */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-          className="mb-10 flex items-center gap-3"
+          transition={{ duration: 0.6 }}
+          className="mb-8 flex items-center gap-3"
         >
-          <span className="relative flex h-3 w-3">
-            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-purple-400 opacity-50" />
-            <span className="relative inline-flex h-3 w-3 rounded-full bg-purple-400" />
-          </span>
+          <span className="h-2 w-2 rounded-full bg-[var(--accent)]" />
 
-          <span className="text-xs font-medium uppercase tracking-[0.3em] text-white/50">
-            Available for projects
+          <span className="text-xs font-medium uppercase tracking-[0.25em] text-[var(--muted)]">
+            Digital products & technology
           </span>
         </motion.div>
 
-        {/* Main heading */}
-        <div className="overflow-hidden">
-          <motion.h1
-            initial={{ y: "100%" }}
-            animate={{ y: 0 }}
-            transition={{
-              duration: 1,
-              ease: [0.16, 1, 0.3, 1],
-            }}
-            className="text-[clamp(4rem,11vw,10rem)] font-semibold leading-[0.82] tracking-[-0.07em]"
-          >
-            I BUILD
-          </motion.h1>
-        </div>
-
-        <div className="overflow-hidden">
-          <motion.h1
-            initial={{ y: "100%" }}
-            animate={{ y: 0 }}
-            transition={{
-              duration: 1,
-              delay: 0.08,
-              ease: [0.16, 1, 0.3, 1],
-            }}
-            className="text-[clamp(4rem,11vw,10rem)] font-semibold leading-[0.82] tracking-[-0.07em] text-white/35"
-          >
-            DIGITAL
-          </motion.h1>
-        </div>
-
-        <div className="overflow-hidden">
-          <motion.h1
-            initial={{ y: "100%" }}
-            animate={{ y: 0 }}
-            transition={{
-              duration: 1,
-              delay: 0.16,
-              ease: [0.16, 1, 0.3, 1],
-            }}
-            className="text-[clamp(4rem,11vw,10rem)] font-semibold leading-[0.82] tracking-[-0.07em]"
-          >
-            EXPERIENCES
-            <span className="text-purple-400">.</span>
-          </motion.h1>
-        </div>
-
-        {/* Bottom content */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
+        {/* HEADLINE */}
+        <motion.h1
+          id="hero-heading"
+          initial={{ opacity: 0, y: 35 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="mt-16 flex flex-col gap-10 md:flex-row md:items-end md:justify-between"
+          transition={{ duration: 0.8, delay: 0.1 }}
+          className="max-w-5xl text-[clamp(3rem,6.5vw,6.5rem)] font-semibold leading-[0.92] tracking-[-0.06em]"
         >
-          <p className="max-w-lg text-base leading-relaxed text-white/45 md:text-lg">
-            I create professional websites and web applications that combine
-            thoughtful design, modern technology, and reliable engineering.
+          DIGITAL PRODUCTS
+          <br />
+
+          <span className="text-[var(--muted)]">
+            BUILT TO
+          </span>{" "}
+
+          <span className="text-[var(--accent)]">
+            GROW.
+          </span>
+        </motion.h1>
+
+        {/* DESCRIPTION + CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 25 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.3 }}
+          className="mt-10 max-w-2xl"
+        >
+          <p className="text-base leading-8 text-[var(--muted)] md:text-lg">
+            Ratzon Digital Products builds websites, web applications,
+            custom software, business systems, and data-driven
+            solutions that help businesses operate better and grow.
           </p>
 
-          <div className="flex flex-wrap gap-4">
-            <a
-              href="#contact"
-              className="group rounded-full bg-white px-7 py-4 text-sm font-medium text-black transition-all duration-300 hover:scale-105"
-            >
-              Start a Project
-              <span className="ml-3 inline-block transition-transform duration-300 group-hover:translate-x-1">
-                →
-              </span>
-            </a>
+          <div className="mt-8 flex flex-wrap gap-4">
 
-            <a
-              href="#work"
-              className="rounded-full border border-white/15 px-7 py-4 text-sm font-medium text-white transition-all duration-300 hover:border-white/40 hover:bg-white/5"
+            {/* START PROJECT */}
+            <Link
+              href="/contact"
+              className="group flex items-center gap-3 rounded-full border border-[var(--foreground)] bg-[var(--foreground)] px-6 py-3.5 text-sm font-medium text-[var(--background)] shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-[var(--accent)] hover:bg-[var(--accent)] hover:text-white"
             >
-              View My Work
-            </a>
+              Start a project
+
+              <ArrowUpRight
+                size={17}
+                className="transition-transform duration-300 group-hover:rotate-45"
+              />
+            </Link>
+
+            {/* SERVICES */}
+            <Link
+              href="/services"
+              className="group flex items-center gap-3 rounded-full border border-[var(--border)] bg-[var(--surface)] px-6 py-3.5 text-sm font-medium text-[var(--foreground)] transition-all duration-300 hover:-translate-y-0.5 hover:border-[var(--accent)] hover:text-[var(--accent)]"
+            >
+              Explore services
+
+              <ArrowDown
+                size={16}
+                className="transition-transform duration-300 group-hover:translate-y-1"
+              />
+            </Link>
+
           </div>
         </motion.div>
 
-        {/* Technologies */}
+        {/* CAPABILITIES */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 1 }}
-          className="mt-24 flex flex-wrap gap-x-8 gap-y-3 border-t border-white/10 pt-6 text-xs uppercase tracking-[0.2em] text-white/25"
+          transition={{ duration: 0.8, delay: 0.6 }}
+          className="mt-20 border-t border-[var(--border)] pt-6"
         >
-          <span>JavaScript</span>
-          <span>TypeScript</span>
-          <span>React</span>
-          <span>Next.js</span>
-          <span>Python</span>
-          <span>Django</span>
-          <span>Machine Learning</span>
+          <div className="flex flex-wrap gap-x-6 gap-y-3">
+            {capabilities.map((item, index) => (
+              <span
+                key={item}
+                className="flex items-center gap-6 text-[11px] font-medium uppercase tracking-[0.18em] text-[var(--muted)]"
+              >
+                {item}
+
+                {index !== capabilities.length - 1 && (
+                  <span className="text-[var(--accent)]/60">
+                    /
+                  </span>
+                )}
+              </span>
+            ))}
+          </div>
         </motion.div>
+
       </div>
     </section>
   );
