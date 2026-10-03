@@ -20,20 +20,28 @@ export default function Hero() {
   return (
     <section
       aria-labelledby="hero-heading"
-      className="relative flex min-h-screen overflow-hidden bg-[var(--background)] text-[var(--foreground)] transition-colors duration-300"
+      className="relative isolate flex min-h-screen overflow-hidden bg-[var(--background)] text-[var(--foreground)] transition-colors duration-300"
     >
+      {/* BACKGROUND */}
 
-      {/* PURPLE GLOW */}
-      <div className="pointer-events-none absolute left-[62%] top-[35%] h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[var(--accent)]/10 blur-[150px]" />
-
-      {/* DECORATIVE CIRCLE */}
-      <div className="pointer-events-none absolute -right-[180px] top-[8%] h-[650px] w-[650px] rounded-full border border-[var(--accent)]/[0.08]" />
-
-      <div className="pointer-events-none absolute -right-[60px] top-[20%] h-[430px] w-[430px] rounded-full border border-[var(--foreground)]/[0.04]" />
-
-      {/* GRID */}
       <div
-        className="pointer-events-none absolute inset-0 opacity-[0.025]"
+        aria-hidden="true"
+        className="pointer-events-none absolute left-[62%] top-[35%] z-0 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[var(--accent)]/10 blur-[150px]"
+      />
+
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -right-[180px] top-[8%] z-0 h-[650px] w-[650px] rounded-full border border-[var(--accent)]/[0.08]"
+      />
+
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -right-[60px] top-[20%] z-0 h-[430px] w-[430px] rounded-full border border-[var(--foreground)]/[0.04]"
+      />
+
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 z-0 opacity-[0.025]"
         style={{
           backgroundImage: `
             linear-gradient(to right, var(--foreground) 1px, transparent 1px),
@@ -43,13 +51,17 @@ export default function Hero() {
         }}
       />
 
-      {/* FADE */}
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,var(--background)_78%)]" />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 z-0 bg-[radial-gradient(circle_at_center,transparent_0%,var(--background)_78%)]"
+      />
 
       {/* CONTENT */}
-      <div className="relative z-10 mx-auto flex w-full max-w-7xl flex-col justify-center px-6 pb-20 pt-32 md:px-12 lg:px-20">
+
+      <div className="relative z-20 mx-auto flex w-full max-w-7xl flex-col justify-center px-6 pb-20 pt-32 md:px-12 lg:px-20">
 
         {/* LABEL */}
+
         <motion.div
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
@@ -63,7 +75,8 @@ export default function Hero() {
           </span>
         </motion.div>
 
-        {/* HEADLINE */}
+        {/* HEADING */}
+
         <motion.h1
           id="hero-heading"
           initial={{ opacity: 0, y: 35 }}
@@ -83,12 +96,13 @@ export default function Hero() {
           </span>
         </motion.h1>
 
-        {/* DESCRIPTION + CTA */}
+        {/* DESCRIPTION */}
+
         <motion.div
           initial={{ opacity: 0, y: 25 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.3 }}
-          className="mt-10 max-w-2xl"
+          className="relative z-30 mt-10 max-w-2xl"
         >
           <p className="text-base leading-8 text-[var(--muted)] md:text-lg">
             Ratzon Digital Products builds websites, web applications,
@@ -96,25 +110,11 @@ export default function Hero() {
             solutions that help businesses operate better and grow.
           </p>
 
-          <div className="mt-8 flex flex-wrap gap-4">
-
-            {/* START PROJECT */}
-            <Link
-              href="/contact"
-              className="group flex items-center gap-3 rounded-full border border-[var(--foreground)] bg-[var(--foreground)] px-6 py-3.5 text-sm font-medium text-[var(--background)] shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-[var(--accent)] hover:bg-[var(--accent)] hover:text-white"
-            >
-              Start a project
-
-              <ArrowUpRight
-                size={17}
-                className="transition-transform duration-300 group-hover:rotate-45"
-              />
-            </Link>
-
-            {/* SERVICES */}
+          {/* ONLY HERO CTA */}
+          <div className="mt-8 flex">
             <Link
               href="/services"
-              className="group flex items-center gap-3 rounded-full border border-[var(--border)] bg-[var(--surface)] px-6 py-3.5 text-sm font-medium text-[var(--foreground)] transition-all duration-300 hover:-translate-y-0.5 hover:border-[var(--accent)] hover:text-[var(--accent)]"
+              className="group flex items-center gap-3 rounded-full border border-[var(--border)] bg-[var(--surface)] px-6 py-3.5 text-sm font-medium text-[var(--foreground)] shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-[var(--accent)] hover:text-[var(--accent)]"
             >
               Explore services
 
@@ -123,16 +123,16 @@ export default function Hero() {
                 className="transition-transform duration-300 group-hover:translate-y-1"
               />
             </Link>
-
           </div>
         </motion.div>
 
         {/* CAPABILITIES */}
+
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="mt-20 border-t border-[var(--border)] pt-6"
+          className="relative z-20 mt-20 border-t border-[var(--border)] pt-6"
         >
           <div className="flex flex-wrap gap-x-6 gap-y-3">
             {capabilities.map((item, index) => (
