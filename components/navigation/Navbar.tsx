@@ -28,7 +28,7 @@ export default function Navbar() {
     <header className="fixed left-0 top-0 z-50 w-full">
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 md:px-12 lg:px-20">
 
-        {/* DESKTOP / MAIN BRAND */}
+        {/* BRAND */}
         <Link
           href="/"
           aria-label="Ratzon Digital Products home"
@@ -57,7 +57,6 @@ export default function Navbar() {
 
           <ThemeToggle />
 
-          {/* THE GOOD START A PROJECT BUTTON */}
           <Link
             href="/contact"
             className="group flex items-center gap-2 rounded-full border border-[var(--border)] bg-[var(--surface)] px-5 py-2.5 text-sm font-semibold text-[var(--foreground)] shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-[var(--accent)] hover:bg-[var(--accent)] hover:text-white"
@@ -106,9 +105,10 @@ export default function Navbar() {
               </button>
             </div>
 
-            {/* MOBILE NAVIGATION */}
+            {/* MOBILE CONTENT */}
             <div className="flex min-h-[calc(100vh-5rem)] flex-col px-6 pb-10">
 
+              {/* NAVIGATION LINKS */}
               <div className="flex flex-1 flex-col justify-center">
                 <div className="border-t border-[var(--border)]">
 
@@ -132,11 +132,12 @@ export default function Navbar() {
                 </div>
               </div>
 
-              {/* MOBILE ACTIONS */}
+              {/* MOBILE CONTROLS */}
               <div className="border-t border-[var(--border)] pt-6">
 
-                <div className="flex items-center justify-between">
+                <div className="flex items-center justify-between gap-4">
 
+                  {/* CV */}
                   <Link
                     href="/Collins_kinoti_murithi_CV.pdf"
                     download
@@ -151,6 +152,7 @@ export default function Navbar() {
                     Download CV
                   </Link>
 
+                  {/* THEME */}
                   <ThemeToggle />
 
                 </div>
