@@ -46,8 +46,24 @@ const statusConfig: Record<
 };
 
 const projects: Project[] = [
-  {
+    {
     number: "01",
+    category: "Charity organization",
+    title: "Talira",
+    description:
+      "The digital platform for Talira to stream line help for Children and girls born into disadvantage.",
+    technologies: [
+      "Next.js",
+      "TypeScript",
+      "SEO",
+      "Motion",
+    ],
+    status: "completed",
+    liveUrl:
+      "https://www.talira.co.ke/",
+  },
+  {
+    number: "02",
     category: "Product / Full-Stack",
     title: "The Oracle",
     description:
@@ -64,7 +80,7 @@ const projects: Project[] = [
   },
 
   {
-    number: "02",
+    number: "03",
     category: "Software / Monitoring",
     title: "Device Monitor",
     description:
@@ -79,7 +95,7 @@ const projects: Project[] = [
   },
 
   {
-    number: "03",
+    number: "04",
     category: "Web / Business",
     title: "Ratzon Digital Products",
     description:
@@ -116,7 +132,7 @@ export default function Projects() {
           <h1 className="max-w-4xl text-[clamp(2.8rem,5.5vw,5.5rem)] font-semibold leading-[0.92] tracking-[-0.06em]">
             SELECTED{" "}
             <span className="text-[var(--muted)]">
-              WORK.
+              Work
             </span>
           </h1>
 

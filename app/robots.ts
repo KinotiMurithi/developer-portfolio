@@ -6,7 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap:
-      "https://developer-portfolio-mauve-xi.vercel.app/sitemap.xml",
+    sitemap: "https://ratzondigitalproducts.co.ke/sitemap.xml",
   };
 }

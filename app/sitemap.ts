@@ -1,7 +1,6 @@
 import type { MetadataRoute } from "next";
 
-const baseUrl =
-  "https://developer-portfolio-mauve-xi.vercel.app";
+const baseUrl = "https://ratzondigitalproducts.co.ke";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
@@ -24,7 +23,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/work`,
+      url: `${baseUrl}/portfolio`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
