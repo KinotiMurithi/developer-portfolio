@@ -58,18 +58,25 @@ const services = [
     number: "08",
     title: "Google Business Profile Optimization",
     description:
-      "Set up and optimize your Google Business Profile to strengthen your local online presence and make it easier for customers to discover your business.",
-    tags: ["Local SEO", "Google Business", "Optimization"],
+      "Set up and optimize your Google Business Profile to strengthen your local online presence and make it easier for customers to discover your business on Google Search and Maps.",
+    tags: ["Local SEO", "Google Maps", "Optimization"],
   },
   {
     number: "09",
+    title: "Google Search Console & Search Visibility",
+    description:
+      "Set up and configure Google Search Console to help your website appear correctly in Google Search. We can connect your site, submit sitemaps, monitor indexing, identify search issues, and track how your website performs in organic search.",
+    tags: ["Search Console", "Indexing", "SEO Monitoring"],
+  },
+  {
+    number: "10",
     title: "Data & Analytics",
     description:
       "Turn business data into useful dashboards, reports, insights, and analytical systems that help teams understand performance and make better decisions.",
     tags: ["Analytics", "Dashboards", "Data"],
   },
   {
-    number: "10",
+    number: "11",
     title: "AI & Machine Learning",
     description:
       "Practical intelligent applications, predictive systems, and machine learning solutions designed around real business use cases and measurable outcomes.",
@@ -107,9 +114,10 @@ export default function Services() {
 
           <p className="mt-8 max-w-3xl text-base leading-7 text-[var(--muted)] md:text-lg">
             Ratzon Digital Products provides web development, custom
-            software, UI/UX design, business systems, data solutions,
-            and AI services for businesses in Kenya and beyond. We build
-            practical technology around real business needs.
+            software, UI/UX design, business systems, search visibility,
+            data solutions, and AI services for businesses in Kenya and
+            beyond. We build practical technology around real business
+            needs.
           </p>
         </motion.div>
 
