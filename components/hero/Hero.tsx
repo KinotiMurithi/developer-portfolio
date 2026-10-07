@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowDown, ArrowUpRight } from "lucide-react";
+import { ArrowDown } from "lucide-react";
 import { motion } from "motion/react";
 
 const capabilities = [
@@ -59,7 +59,6 @@ export default function Hero() {
       {/* CONTENT */}
 
       <div className="relative z-20 mx-auto flex w-full max-w-7xl flex-col justify-center px-6 pb-20 pt-32 md:px-12 lg:px-20">
-
         {/* LABEL */}
 
         <motion.div
@@ -71,7 +70,7 @@ export default function Hero() {
           <span className="h-2 w-2 rounded-full bg-[var(--accent)]" />
 
           <span className="text-xs font-medium uppercase tracking-[0.25em] text-[var(--muted)]">
-            Digital products & technology
+            Web development & digital technology
           </span>
         </motion.div>
 
@@ -87,12 +86,10 @@ export default function Hero() {
           DIGITAL PRODUCTS
           <br />
 
-          <span className="text-[var(--muted)]">
-            BUILT TO
-          </span>{" "}
+          <span className="text-[var(--muted)]">& SOFTWARE</span>{" "}
 
           <span className="text-[var(--accent)]">
-            GROW.
+            BUILT TO GROW.
           </span>
         </motion.h1>
 
@@ -105,12 +102,14 @@ export default function Hero() {
           className="relative z-30 mt-10 max-w-2xl"
         >
           <p className="text-base leading-8 text-[var(--muted)] md:text-lg">
-            Ratzon Digital Products builds websites, web applications,
-            custom software, business systems, and data-driven
-            solutions that help businesses operate better and grow.
+            Ratzon Digital Products is a Kenya-based technology business
+            building professional websites, web applications, custom
+            software, business systems, dashboards, and data-driven
+            digital solutions for businesses in Kenya and beyond.
           </p>
 
-          {/* ONLY HERO CTA */}
+          {/* HERO CTA */}
+
           <div className="mt-8 flex">
             <Link
               href="/services"
@@ -143,15 +142,12 @@ export default function Hero() {
                 {item}
 
                 {index !== capabilities.length - 1 && (
-                  <span className="text-[var(--accent)]/60">
-                    /
-                  </span>
+                  <span className="text-[var(--accent)]/60">/</span>
                 )}
               </span>
             ))}
           </div>
         </motion.div>
-
       </div>
     </section>
   );
