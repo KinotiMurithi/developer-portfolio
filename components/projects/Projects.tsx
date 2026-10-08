@@ -48,7 +48,7 @@ const statusConfig: Record<
 const projects: Project[] = [
     {
     number: "01",
-    category: "Charity organization",
+    category: "Charity organization / fullstack",
     title: "Talira",
     description:
       "The digital platform for Talira to stream line help for Children and girls born into disadvantage.",
@@ -62,8 +62,26 @@ const projects: Project[] = [
     liveUrl:
       "https://www.talira.co.ke/",
   },
+
   {
     number: "02",
+      category: "Healthcare / Frontend",
+      title: "AmaniCare Hospital",
+      description:
+        "A polished two-page hospital website designed as a modern healthcare experience, featuring a responsive homepage, service departments, specialist profiles, patient testimonials, appointment CTAs, and a patient-first visual system.",
+      technologies: [
+        "Next.js",
+        "TypeScript",
+        "Tailwind CSS",
+        "Vercel",
+      ],
+      status: "completed",
+      liveUrl:
+        "https://amanicare-hospital.vercel.app/",
+  },
+
+  {
+    number: "03",
     category: "Product / Full-Stack",
     title: "The Oracle",
     description:
@@ -80,7 +98,7 @@ const projects: Project[] = [
   },
 
   {
-    number: "03",
+    number: "04",
     category: "Software / Monitoring",
     title: "Device Monitor",
     description:
@@ -95,7 +113,7 @@ const projects: Project[] = [
   },
 
   {
-    number: "04",
+    number: "05",
     category: "Web / Business",
     title: "Ratzon Digital Products",
     description:
