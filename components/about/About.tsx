@@ -120,7 +120,7 @@ export default function About() {
             </div>
 
             <p className="max-w-2xl text-sm leading-7 text-[var(--muted)]">
-              Founder and developer building Ratzon Digital Products
+              Founder and lead developer building Ratzon Digital Products
               around software, digital products, data, and business
               growth.
             </p>
