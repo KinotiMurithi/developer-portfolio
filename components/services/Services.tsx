@@ -1,3 +1,4 @@
+
 "use client";
 
 import Link from "next/link";
@@ -9,78 +10,78 @@ const services = [
     number: "01",
     title: "Website Development",
     description:
-      "Professional, responsive websites designed around your brand, customers, business goals, and online presence. Built with performance, usability, and search visibility in mind.",
-    tags: ["Business Websites", "Responsive", "SEO"],
+      "Custom business websites, landing pages, and professional portfolio websites designed to establish your online presence. We build responsive, mobile-friendly websites with modern interfaces, fast loading times, and SEO-friendly foundations.",
+    tags: ["Business Websites", "Responsive Design", "Technical SEO"],
   },
   {
     number: "02",
-    title: "Web Applications",
+    title: "Web Application Development",
     description:
-      "Interactive web applications built to solve specific business problems, automate processes, and deliver useful digital experiences across desktop and mobile.",
-    tags: ["Next.js", "React", "Web Apps"],
+      "Custom web applications that help businesses deliver digital services, manage information, automate tasks, and improve customer experiences. Built with modern technologies such as React, Next.js, and TypeScript.",
+    tags: ["Next.js", "React", "Web Applications"],
   },
   {
     number: "03",
-    title: "Custom Software",
+    title: "Custom Business Software",
     description:
-      "Tailored software systems built around the unique workflows, processes, data, and operational requirements of your business.",
-    tags: ["Custom Systems", "Automation", "Business Software"],
+      "Software systems developed around your organization's specific operations and workflows. From management platforms to business process automation, we build solutions that reduce manual work and improve operational efficiency.",
+    tags: ["Business Systems", "Automation", "Custom Software"],
   },
   {
     number: "04",
     title: "UI/UX Design",
     description:
-      "Clear, modern, user-focused interfaces designed to make websites and digital products intuitive, accessible, and easier to use.",
+      "User interface and user experience design for websites, web applications, and digital products. We create intuitive layouts, interactive prototypes, and consistent design systems that make digital products easier to understand and use.",
     tags: ["UI Design", "UX Design", "Prototyping"],
   },
   {
     number: "05",
     title: "Backend & API Development",
     description:
-      "Reliable backend systems and APIs that power applications, connect services, manage data, and provide the foundation for scalable digital products.",
-    tags: ["Django", "REST APIs", "Databases"],
+      "Secure backend development and REST API integration for websites and web applications. We develop server-side functionality, database systems, authentication, and integrations that allow different digital services to communicate reliably.",
+    tags: ["Django", "REST APIs", "Database Design"],
   },
   {
     number: "06",
     title: "Dashboards & Admin Systems",
     description:
-      "Internal dashboards and administration systems that help businesses manage operations, users, data, reporting, and workflows from a centralized interface.",
-    tags: ["Dashboards", "Admin Panels", "Business Intelligence"],
+      "Custom business dashboards and administration platforms for managing users, operations, records, reports, and organizational data. We build centralized systems that make information easier to access and business processes easier to manage.",
+    tags: ["Admin Panels", "Reporting", "Management Systems"],
   },
   {
     number: "07",
     title: "Website Redesign & Maintenance",
     description:
-      "Modernize an existing website with improved design, performance, usability, content, technical fixes, SEO foundations, and ongoing maintenance.",
-    tags: ["Redesign", "Performance", "Maintenance"],
+      "Website redesign, performance improvements, technical troubleshooting, and ongoing maintenance. We help businesses modernize outdated websites, improve mobile usability, resolve technical issues, and maintain a reliable online presence.",
+    tags: ["Website Redesign", "Performance", "Maintenance"],
   },
   {
     number: "08",
     title: "Google Business Profile Optimization",
     description:
-      "Set up and optimize your Google Business Profile to strengthen your local online presence and make it easier for customers to discover your business on Google Search and Maps.",
-    tags: ["Local SEO", "Google Maps", "Optimization"],
+      "Google Business Profile setup and optimization for businesses looking to strengthen their local online presence. We help configure business information, service categories, contact details, and profile content to improve discoverability on Google Search and Maps.",
+    tags: ["Google Business Profile", "Local SEO", "Google Maps"],
   },
   {
     number: "09",
-    title: "Google Search Console & Search Visibility",
+    title: "Google Search Console & Technical SEO",
     description:
-      "Set up and configure Google Search Console to help your website appear correctly in Google Search. We can connect your site, submit sitemaps, monitor indexing, identify search issues, and track how your website performs in organic search.",
-    tags: ["Search Console", "Indexing", "SEO Monitoring"],
+      "Google Search Console setup, sitemap submission, indexing monitoring, and technical SEO checks. We help businesses understand how Google discovers their websites, identify crawling and indexing issues, and monitor organic search performance.",
+    tags: ["Google Search Console", "Indexing", "Technical SEO"],
   },
   {
     number: "10",
-    title: "Data & Analytics",
+    title: "Data Analytics & Reporting",
     description:
-      "Turn business data into useful dashboards, reports, insights, and analytical systems that help teams understand performance and make better decisions.",
-    tags: ["Analytics", "Dashboards", "Data"],
+      "Data analysis, reporting systems, and interactive dashboards that transform business information into useful insights. We help organizations organize data, monitor performance, identify trends, and make more informed operational decisions.",
+    tags: ["Data Analytics", "Visualization", "Reporting"],
   },
   {
     number: "11",
-    title: "AI & Machine Learning",
+    title: "AI & Machine Learning Solutions",
     description:
-      "Practical intelligent applications, predictive systems, and machine learning solutions designed around real business use cases and measurable outcomes.",
-    tags: ["Python", "Machine Learning", "AI"],
+      "AI-powered applications, intelligent automation, and machine learning solutions designed around practical business problems. We explore suitable AI technologies to build tools that support workflows, process information, and improve how businesses operate.",
+    tags: ["Artificial Intelligence", "Machine Learning", "Python"],
   },
 ];
 
@@ -92,7 +93,6 @@ export default function Services() {
     >
       <div className="mx-auto max-w-7xl">
         {/* HEADER */}
-
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -101,7 +101,7 @@ export default function Services() {
           className="mb-20"
         >
           <p className="mb-5 text-xs font-semibold uppercase tracking-[0.25em] text-[var(--accent)]">
-            Web development & digital solutions
+            Web Development & Digital Solutions in Kenya
           </p>
 
           <h1
@@ -113,16 +113,16 @@ export default function Services() {
           </h1>
 
           <p className="mt-8 max-w-3xl text-base leading-7 text-[var(--muted)] md:text-lg">
-            Ratzon Digital Products provides web development, custom
-            software, UI/UX design, business systems, search visibility,
-            data solutions, and AI services for businesses in Kenya and
-            beyond. We build practical technology around real business
-            needs.
+            Ratzon Digital Products provides website development, custom
+            software, web applications, UI/UX design, backend development,
+            business dashboards, technical SEO, data analytics, and AI
+            solutions. We help businesses in Kenya and beyond build
+            practical digital products that solve real operational and
+            customer needs.
           </p>
         </motion.div>
 
         {/* SERVICES */}
-
         <div className="border-t border-[var(--border)]">
           {services.map((service, index) => (
             <motion.article
@@ -138,7 +138,6 @@ export default function Services() {
             >
               <div className="grid gap-7 md:grid-cols-[80px_1fr_1fr_auto] md:items-start">
                 {/* NUMBER */}
-
                 <span
                   aria-hidden="true"
                   className="text-sm font-medium text-[var(--accent)]"
@@ -147,7 +146,6 @@ export default function Services() {
                 </span>
 
                 {/* TITLE */}
-
                 <div>
                   <h2 className="text-2xl font-semibold tracking-[-0.03em] md:text-3xl">
                     {service.title}
@@ -155,7 +153,6 @@ export default function Services() {
                 </div>
 
                 {/* DESCRIPTION */}
-
                 <div>
                   <p className="max-w-lg text-sm leading-7 text-[var(--muted)] md:text-base">
                     {service.description}
@@ -174,7 +171,6 @@ export default function Services() {
                 </div>
 
                 {/* ACTION */}
-
                 <div className="flex items-center">
                   <Link
                     href="/contact"
@@ -194,7 +190,6 @@ export default function Services() {
         </div>
 
         {/* CTA */}
-
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -204,9 +199,9 @@ export default function Services() {
         >
           <div className="max-w-xl">
             <p className="text-sm leading-6 text-[var(--muted)]">
-              Not sure which service your business needs? Tell us about
-              the problem you're trying to solve and we'll help identify
-              the right digital solution.
+              Looking for a website, custom software, or another digital
+              solution for your business? Tell us what you want to achieve
+              and we will help identify an appropriate solution.
             </p>
 
             <Link
@@ -214,7 +209,11 @@ export default function Services() {
               className="mt-3 inline-flex text-sm font-medium text-[var(--accent)] transition-opacity hover:opacity-70"
             >
               Explore our portfolio
-              <ArrowUpRight size={15} className="ml-1" aria-hidden="true" />
+              <ArrowUpRight
+                size={15}
+                className="ml-1"
+                aria-hidden="true"
+              />
             </Link>
           </div>
 

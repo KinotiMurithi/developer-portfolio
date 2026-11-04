@@ -4,13 +4,12 @@ import Navbar from "@/components/navigation/Navbar";
 import Services from "@/components/services/Services";
 
 export const metadata: Metadata = {
-  title: "Web Development & Digital Solutions",
+  title: "Web Development & Digital Solutions in Kenya",
   description:
-    "Explore web development, web applications, custom software, UI/UX design, backend APIs, dashboards, Google Business Profile optimization, data analytics, and AI solutions from Ratzon Digital Products in Kenya.",
+    "Discover professional web development, custom software, web applications, UI/UX design, backend APIs, dashboards, data analytics, and AI solutions for businesses in Kenya.",
 
   alternates: {
-    canonical:
-      "https://ratzondigitalproducts.co.ke/services",
+    canonical: "https://ratzondigitalproducts.co.ke/services",
   },
 
   openGraph: {
@@ -19,17 +18,17 @@ export const metadata: Metadata = {
     url: "https://ratzondigitalproducts.co.ke/services",
     siteName: "Ratzon Digital Products",
     title:
-      "Web Development & Digital Solutions | Ratzon Digital Products",
+      "Web Development & Digital Solutions in Kenya | Ratzon Digital Products",
     description:
-      "Professional web development, custom software, UI/UX, APIs, dashboards, analytics, Google Business Profile optimization, and AI solutions for businesses.",
+      "Explore professional web development, custom software, UI/UX design, APIs, dashboards, analytics, and AI solutions for Kenyan businesses.",
   },
 
   twitter: {
     card: "summary_large_image",
     title:
-      "Web Development & Digital Solutions | Ratzon Digital Products",
+      "Web Development & Digital Solutions in Kenya | Ratzon Digital Products",
     description:
-      "Professional web development, custom software, UI/UX, APIs, dashboards, analytics, and AI solutions for businesses.",
+      "Professional web development, custom software, UI/UX, APIs, dashboards, analytics, and AI solutions for businesses in Kenya.",
   },
 };
 
