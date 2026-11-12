@@ -3,6 +3,8 @@ import "./globals.css";
 
 import ThemeProvider from "@/components/theme/ThemeProvider";
 import StructuredData from "@/components/seo/StructuredData";
+import Footer from "@/components/layout/Footer";
+
 
 const siteUrl = "https://ratzondigitalproducts.co.ke";
 
@@ -11,12 +13,12 @@ export const metadata: Metadata = {
 
   title: {
     default:
-      "Ratzon Digital Products | Web Development & Digital Solutions in Kenya",
+      "Ratzon Digital Products | IT Services, Software & Digital Solutions in Kenya",
     template: "%s | Ratzon Digital Products",
   },
 
   description:
-    "Ratzon Digital Products builds professional websites, web applications, custom software, business systems, dashboards, APIs, data solutions, AI systems, and digital products for businesses in Kenya and beyond.",
+    "Ratzon Digital Products provides IT services, software development, web applications, cybersecurity, cloud solutions, IT support, network services, data analytics, and AI solutions for businesses in Kenya and beyond.",
 
   applicationName: "Ratzon Digital Products",
 
@@ -33,20 +35,35 @@ export const metadata: Metadata = {
   category: "Technology",
 
   classification:
-    "Web Development, Software Development, Digital Products, Technology",
+    "IT Services, Software Development, Cybersecurity, Cloud Computing, Digital Solutions",
 
   keywords: [
     "Ratzon Digital Products",
+    "IT services Kenya",
+    "IT support Kenya",
+    "IT services Nairobi",
     "web development Kenya",
     "web development Nairobi",
     "website development Kenya",
-    "website development Nairobi",
-    "web applications Kenya",
-    "custom software Kenya",
     "software development Kenya",
+    "custom software Kenya",
+    "web applications Kenya",
     "UI UX design Kenya",
     "backend development Kenya",
     "API development Kenya",
+    "cybersecurity services Kenya",
+    "data protection Kenya",
+    "data backup and recovery Kenya",
+    "cloud services Kenya",
+    "cloud migration Kenya",
+    "Microsoft 365 support Kenya",
+    "Google Workspace support Kenya",
+    "network installation Kenya",
+    "network support Kenya",
+    "technical support Kenya",
+    "business software Kenya",
+    "SaaS management Kenya",
+    "CRM and ERP solutions Kenya",
     "business dashboards Kenya",
     "Google Business Profile optimization Kenya",
     "data analytics Kenya",
@@ -55,10 +72,6 @@ export const metadata: Metadata = {
     "digital solutions Kenya",
     "technology company Kenya",
   ],
-
-  alternates: {
-    canonical: siteUrl,
-  },
 
   robots: {
     index: true,
@@ -78,15 +91,15 @@ export const metadata: Metadata = {
     url: siteUrl,
     siteName: "Ratzon Digital Products",
     title:
-      "Ratzon Digital Products | Web Development & Digital Solutions in Kenya",
+      "Ratzon Digital Products | IT Services, Software & Digital Solutions in Kenya",
     description:
-      "Web development, web applications, custom software, business systems, dashboards, APIs, data solutions, AI, and digital products for businesses in Kenya and beyond.",
+      "IT services, software development, cybersecurity, cloud solutions, technical support, network services, data analytics, and AI solutions for businesses in Kenya and beyond.",
     images: [
       {
         url: `${siteUrl}/og-image.png`,
         width: 1200,
         height: 630,
-        alt: "Ratzon Digital Products — Web Development & Digital Solutions",
+        alt: "Ratzon Digital Products — IT Services & Digital Solutions",
       },
     ],
   },
@@ -94,9 +107,9 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title:
-      "Ratzon Digital Products | Web Development & Digital Solutions in Kenya",
+      "Ratzon Digital Products | IT Services & Digital Solutions in Kenya",
     description:
-      "We build websites, web applications, custom software, business systems, data solutions, and AI-powered digital products.",
+      "Software development, cybersecurity, cloud services, IT support, network solutions, data analytics, and AI-powered digital products.",
     images: [`${siteUrl}/og-image.png`],
   },
 
@@ -116,7 +129,10 @@ export default function RootLayout({
     <html lang="en-KE" suppressHydrationWarning>
       <body>
         <StructuredData />
-        <ThemeProvider>{children}</ThemeProvider>
+        <ThemeProvider>
+          {children}
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );

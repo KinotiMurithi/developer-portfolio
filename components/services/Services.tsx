@@ -1,4 +1,3 @@
-
 "use client";
 
 import Link from "next/link";
@@ -38,7 +37,7 @@ const services = [
     number: "05",
     title: "Backend & API Development",
     description:
-      "Secure backend development and REST API integration for websites and web applications. We develop server-side functionality, database systems, authentication, and integrations that allow different digital services to communicate reliably.",
+      "Backend development and REST API integration for websites and web applications. We develop server-side functionality, database systems, authentication, and integrations that allow different digital services to communicate reliably.",
     tags: ["Django", "REST APIs", "Database Design"],
   },
   {
@@ -83,6 +82,48 @@ const services = [
       "AI-powered applications, intelligent automation, and machine learning solutions designed around practical business problems. We explore suitable AI technologies to build tools that support workflows, process information, and improve how businesses operate.",
     tags: ["Artificial Intelligence", "Machine Learning", "Python"],
   },
+  {
+    number: "12",
+    title: "Cybersecurity & Data Protection",
+    description:
+      "Practical security services that help businesses protect their systems, networks, devices, and sensitive information. Depending on project requirements, services may include security assessments, access control, multi-factor authentication, firewall configuration, and endpoint protection.",
+    tags: ["Security Assessments", "Access Control", "Data Protection"],
+  },
+  {
+    number: "13",
+    title: "Data Backup & Disaster Recovery",
+    description:
+      "Backup planning and recovery solutions designed to help businesses protect critical information and restore operations after data loss, system failure, accidental deletion, or cyber incidents. We help assess backup requirements and implement appropriate local or cloud-based strategies.",
+    tags: ["Cloud Backups", "Data Recovery", "Business Continuity"],
+  },
+  {
+    number: "14",
+    title: "Cloud Management & Migration",
+    description:
+      "Cloud setup, migration, and administration to help organizations manage digital resources and support modern working environments. Services can include Microsoft 365 and Google Workspace configuration, user management, permissions, and cloud infrastructure planning.",
+    tags: ["Cloud Migration", "Microsoft 365", "Google Workspace"],
+  },
+  {
+    number: "15",
+    title: "IT Help Desk & Technical Support",
+    description:
+      "Technical assistance for everyday business technology challenges. Support can include hardware and software troubleshooting, device configuration, software installation, account access issues, password resets, and general IT guidance.",
+    tags: ["Technical Support", "Troubleshooting", "Device Setup"],
+  },
+  {
+    number: "16",
+    title: "Network Setup & Monitoring",
+    description:
+      "Network installation and configuration services for business environments. This can include local area networks, Wi-Fi setup, router and connectivity configuration, network troubleshooting, and monitoring arrangements to support reliable communication.",
+    tags: ["LAN Setup", "Wi-Fi Configuration", "Network Support"],
+  },
+  {
+    number: "17",
+    title: "Business Software & SaaS Management",
+    description:
+      "Assistance with selecting, sourcing, configuring, and deploying subscription-based business applications. We help organizations assess software requirements and manage solutions such as CRM, ERP, collaboration, and productivity platforms, including licensing and user access.",
+    tags: ["CRM & ERP", "SaaS Deployment", "Software Licensing"],
+  },
 ];
 
 export default function Services() {
@@ -101,24 +142,24 @@ export default function Services() {
           className="mb-20"
         >
           <p className="mb-5 text-xs font-semibold uppercase tracking-[0.25em] text-[var(--accent)]">
-            Web Development & Digital Solutions in Kenya
+            IT Services, Software & Digital Solutions in Kenya
           </p>
 
           <h1
             id="services-heading"
             className="max-w-4xl text-[clamp(2.8rem,5.5vw,5.5rem)] font-semibold leading-[0.92] tracking-[-0.06em]"
           >
-            WEB DEVELOPMENT{" "}
-            <span className="text-[var(--muted)]">& SOFTWARE.</span>
+            TECHNOLOGY{" "}
+            <span className="text-[var(--muted)]">& IT SOLUTIONS.</span>
           </h1>
 
           <p className="mt-8 max-w-3xl text-base leading-7 text-[var(--muted)] md:text-lg">
-            Ratzon Digital Products provides website development, custom
-            software, web applications, UI/UX design, backend development,
-            business dashboards, technical SEO, data analytics, and AI
-            solutions. We help businesses in Kenya and beyond build
-            practical digital products that solve real operational and
-            customer needs.
+            Ratzon Digital Products provides software development, web
+            solutions, cybersecurity, cloud services, IT support, network
+            solutions, data analytics, and AI-powered technologies. We help
+            businesses in Kenya and beyond adopt, manage, and get more value
+            from technology through practical solutions tailored to their
+            operational needs.
           </p>
         </motion.div>
 
@@ -189,6 +230,13 @@ export default function Services() {
           ))}
         </div>
 
+        {/* SERVICE DELIVERY NOTE */}
+        <p className="mt-8 max-w-3xl text-xs leading-6 text-[var(--muted)]">
+          Some specialist IT services are delivered in collaboration with
+          qualified technical partners, depending on the scope and requirements
+          of each engagement.
+        </p>
+
         {/* CTA */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -199,9 +247,10 @@ export default function Services() {
         >
           <div className="max-w-xl">
             <p className="text-sm leading-6 text-[var(--muted)]">
-              Looking for a website, custom software, or another digital
-              solution for your business? Tell us what you want to achieve
-              and we will help identify an appropriate solution.
+              Looking for software development, IT support, infrastructure
+              services, or another technology solution for your business? Tell
+              us what you need to achieve and we will help identify an
+              appropriate solution.
             </p>
 
             <Link
@@ -234,3 +283,4 @@ export default function Services() {
     </section>
   );
 }
+

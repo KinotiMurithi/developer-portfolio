@@ -145,10 +145,10 @@ export default function Contact() {
                 </p>
 
                 <a
-                  href="mailto:collinskmurithi@gmail.com"
+                  href="mailto:ratzondigitalproducts@gmail.com"
                   className="mt-2 block text-lg font-medium transition-colors hover:text-[var(--accent)]"
                 >
-                  collinskmurithi@gmail.com
+                  ratzondigitalproducts@gmail.com
                 </a>
               </div>
 

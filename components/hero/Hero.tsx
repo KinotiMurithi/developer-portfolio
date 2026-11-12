@@ -1,20 +1,9 @@
+
 "use client";
 
 import Link from "next/link";
 import { ArrowDown } from "lucide-react";
 import { motion } from "motion/react";
-
-const capabilities = [
-  "Website Development",
-  "Web Applications",
-  "Custom Software",
-  "UI/UX Design",
-  "Backend & APIs",
-  "Dashboards",
-  "Google Business",
-  "Data & Analytics",
-  "AI & Machine Learning",
-];
 
 export default function Hero() {
   return (
@@ -122,30 +111,6 @@ export default function Hero() {
                 className="transition-transform duration-300 group-hover:translate-y-1"
               />
             </Link>
-          </div>
-        </motion.div>
-
-        {/* CAPABILITIES */}
-
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="relative z-20 mt-20 border-t border-[var(--border)] pt-6"
-        >
-          <div className="flex flex-wrap gap-x-6 gap-y-3">
-            {capabilities.map((item, index) => (
-              <span
-                key={item}
-                className="flex items-center gap-6 text-[11px] font-medium uppercase tracking-[0.18em] text-[var(--muted)]"
-              >
-                {item}
-
-                {index !== capabilities.length - 1 && (
-                  <span className="text-[var(--accent)]/60">/</span>
-                )}
-              </span>
-            ))}
           </div>
         </motion.div>
       </div>
